@@ -47,12 +47,12 @@ st.write("入力したテキストに対して、選択した専門家の立場�
 expert_type = st.radio(
     "専門家の種類を選択してください",
     ["ITコンサルタント", "医療アドバイザー"],
-    key="expert_type_radio",  # ← duplicate対策（保険）
+    key="expert_type_radio",  # ← duplicate対策
 )
 
 user_text = st.text_area("質問・相談内容を入力してください", height=200)
 
-# 入力の簡易制限（長文事故防止）
+# 入力の簡易制限
 if len(user_text) > MAX_INPUT_CHARS:
     st.warning(f"入力が長すぎます（{len(user_text)}文字）。{MAX_INPUT_CHARS}文字以内にしてください。")
 
